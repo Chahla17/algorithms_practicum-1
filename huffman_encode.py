@@ -40,13 +40,13 @@ class HuffmanEncode:
             else:              result[char] = 1
         return result
 
-    def code_tree(self, node, binString=''):
-        if type(node) is str: return {node: binString}
+    def code_tree(self, node, bin_string=''):
+        if type(node) is str: return {node: bin_string}
 
         left, right = node.children()
         out = {}
-        out.update(self.code_tree(left, binString + '0'))
-        out.update(self.code_tree(right, binString + '1'))
+        out.update(self.code_tree(left, bin_string + '0'))
+        out.update(self.code_tree(right, bin_string + '1'))
         return out
 
     def build_code(self, nodes):
